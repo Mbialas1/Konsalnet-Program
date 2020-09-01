@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>KonsTrip-Add</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script type="text/javascript" src="{% static 'AddRamJs.js' %}"></script>
+        <script type="text/javascript" src="{% static 'ShowHide.js' %}"></script>
+        <script type="text/javascript" src="{% static 'GoogleMapsTransition.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script  defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyAR-gtPnH3tWX-x57-gkdwCrG1__WH-J2Y"  type="text/javascript"></script>
+    <body>
+        <h1>Dodaj</h1>
+        <div id ='Toolbar'>
+            <div id='ToolbarAdd'>
+            <input type="button" id='buttonToolbar' value="Specyfikacja Ram" Onclick='ChangeInputAdd("RamSpec")'/>
+            <input type="button" id='buttonToolbar' value="Miasto" Onclick='ChangeInputAdd("City")'/>
+            </div>
+            <form action="" method='POST'>
+                {% csrf_token %}
+            <div id=ToolbarTextBox>
+            <div id='RamSpec'>
+               <p>Komputer:</p> 
+                {{ form.Computer }}         
+                <p>Pamięć operacyjna:</p>   
+                {{ form.Ram }} 
+            </div>
+            <div id='City' style="display: none;">
+                <p>Miasto:</p>
+                {{formCity.City}}
+                <p>Kilometry: (Sprawdź<input type="checkbox" id="CheckBoxKm" Onclick="CheckBoxMeters(this)" />)-nie działa</p>
+                {{formCity.Meters}}
+            </div>
+        </div>
+ 
+            <div id='Return'>
+                <input type="submit" id='buttonToolbar' value="Dodaj" />
+                <p></p>
+            </form>
+        <input type="button" id='buttonToolbar' value="Powrót" onclick=" window.open('/','_self')"/>
+    </div>
+    </body>
+</html> 

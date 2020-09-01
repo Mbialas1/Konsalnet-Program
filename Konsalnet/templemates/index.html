@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+ <title>KonsTrip-Main</title>
+ <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+    <body>
+        <h1>KonsTrip</h1>
+    <div id='Toolbar'>
+
+    <input type="button" id='buttonToolbar' value="Podróże" onclick=" window.open('Trip.html','_self')"/>
+    <input type="button" id='buttonToolbar' value="Dodaj zamówienie" onclick=" window.open('AddRam.html','_self')"/>
+    <p style="color: #cc0000;">_______________________________________________________</p>
+    <input type="button" id='buttonToolbar' value="Opcje" onclick=" window.open('Options.html','_self')"/>
+    <input type="button"id='buttonToolbar'  value="Dodaj..." onclick=" window.open('Add.html','_self')"/>
+
+    </div>
+    </body>
+</html>

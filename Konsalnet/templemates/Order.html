@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>KonsTrip-AddRAM</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script type="text/javascript" src="{% static 'AddOrder.js' %}"></script>
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+        <script>
+            function goBack() {
+              window.history.back();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Zawartość maila:</h1>
+        <form action="" method='POST'>
+            {% csrf_token %}
+        <div id ='Toolbar'>
+            <div id='TextMail'>
+            <p name='TextMailForSend'>{{ TextMail | safe }}</p>
+            </div>
+            <p></p>
+            <p></p>
+            <input type="submit" id='buttonToolbar' value="Wyślij"/> <br />
+        </form>
+            <input type="button" id='buttonToolbar' value="Powrót" onclick="goBack()"/>
+        </div>
+    </body>
+    </html>

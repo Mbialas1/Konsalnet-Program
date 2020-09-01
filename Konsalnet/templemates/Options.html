@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>KonsTrip-Options</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <h1>Opcje</h1>
+    </head>
+    <body>
+        <form action="" method="POST">
+            {% csrf_token %}
+        <div id='ToolbarTextBox' name='MainDiv'>
+            <div id ='Toolbar'>
+                <p>Mail wysyłającego:</p><br/>
+                {{ OptionsWin.NameMail }}
+                <p>Host serwera:</p>
+                {{ OptionsWin.NameHost }}
+                <p>Hasło wysyłającego:</p>
+                {{ OptionsWin.PassMail }}
+                <p>Port serwera:</p>
+                {{ OptionsWin.NamePort }}
+                <p>Domyślny nadawca:</p>
+                {{ OptionsWin.NameToSend }}
+                <p></p><br />
+                <input type="submit" id='buttonToolbar' value="Zmień dane"/><br/>
+                </form>
+                <input type="button" id='buttonToolbar' value="Powrót" onclick=" window.open('/','_self')"/>
+            </div>
+            
+        </div>
+    </body>
+</html>

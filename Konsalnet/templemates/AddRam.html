@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>KonsTrip-AddRAM</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script type="text/javascript" src="{% static 'AddOrder.js' %}"></script>
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>Specyfikacja pamięci</h1>
+        <div id ='Toolbar'>
+            <div id='ToolbarAdd'>
+                <input type="image" id='buttonToolbarPlusMinus' Onclick='PlusButton()' src="{% static 'green-plus.png' %}" width="72" height="72"/>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="image" id='buttonToolbarPlusMinus' Onclick='MinusButton()' src="{% static 'red-minus.png' %}" width="72" height="72"/>
+            </div>
+            <form action="" method='POST'>
+            {% csrf_token %}
+            <div id='ToolbarTextBox' name='MainDiv'>
+                <div id='TitleSlot'>
+                <p style="margin-left: -50%;">Lp.</p>
+<p style="margin-left: 25%;">Model:</p>
+<p style="margin-left: 40%;">Pojemność(GB):</p>
+<p style="margin-left: 35%;">Ilość:</p>
+</div>
+<p></p>
+            <div id='SlotOfRam'>
+<p>#1</p>
+{{ form.ChoiceFieldComputer }}
+<input type="text" style="margin-left: 10%;" required="true" name="GB"/>
+<input type="text" style="margin-left: 10%;" name="NrStack" required="true"/>
+<input type="text" value="1" style="margin-left: 10%; display: none;" name="NrPop" />
+            </div>
+            </div>
+            <input type="submit" id='buttonToolbar' value="Złóż zamówienie" Onclick='SendOrderTo()'/>
+        </form>  
+            <input type="button" id='buttonToolbar' value="Powrót" onclick=" window.open('/','_self')"/>
+            <p id='NrSztuk' style="display: none;">1</p>
+        </div>
+    </body>
+</html>
